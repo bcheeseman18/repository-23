@@ -1,0 +1,13 @@
+<section>
+    <ul>
+        <li ng-repeat="friend in friends">
+            <p>Name: {{ friend.realname }}</p>
+            <p>Number of Posts: {{ friend.post }}</p>
+            <p>Last Updated: {{ friend.update }}</p>
+            <p>Current Date: {{ friend.date }}</p>
+            <p>Week: {{ friend.week }}</p>
+            <p>Month: {{ friend.month }}</p>
+            <img ng-src="{{ friend.pic }}">
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,17 @@
+<section>
+    <input type="text" ng-model="user_name">
+    <button ng-click='add()'>Add User</button>
+    
+    <ul>
+        <li ng-repeat="friend in friends">
+            <h3>
+                
+                <span>Username:</span><a ui-sref="userdetails"> {{ friend.username }}</a>
+
+
+            </h3>
+
+        </li>
+    </ul>
+
+</section>
