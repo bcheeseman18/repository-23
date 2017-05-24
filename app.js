@@ -56,8 +56,9 @@ app.factory('FriendService', function ($http) {
                 post: '',
                 realname: '',
                 date: '',
-                week: '',
-                month: '', 
+                week: 0,
+                month: 0, 
+                long: 0, 
 
             };
             friends.push(friend);
@@ -77,26 +78,18 @@ app.factory('FriendService', function ($http) {
                     if (response.data[i].created_at) {
                         console.log(response.data[i].created_at);
                         const date = moment(response.data[i].created_at);
-                        const repo = date.public_repos; 
-                        friend.week = repo; 
-                        console.log('hello!!!')
+                        if (date > moment().subtract(7, 'days')) {
+                            friend.week++;
+                        }; 
+
+                        if (date > moment().subtract(30, 'days')) {
+                            friend.month++; 
+                        }; 
+
+                        if (date > moment().subtract(100, 'days')) {
+                            friend.long++; 
+                        }; 
                     }; 
-                        // friend.date = date;
-                        // const week = moment(date).subtract(7, 'days'); 
-                        // friend.week = week; 
-                        // const month = moment(date).subtract(30, 'days'); 
-                        // friend.month = month; 
-                        // console.log('hi there');
-
-                        // if (response.data[i].created_at) {
-                        //     console.log('hi');
-                        // }; 
-
-
-                        // const week = moment(response.data[i].created_at); 
-                        // friend.week = week; 
-
-                    // };
                 };
             });
         },
