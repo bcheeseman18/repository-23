@@ -1,0 +1,22 @@
+@import './node_modules/foundation-sites/scss/foundation'; 
+
+@include foundation-global-styles;
+@include foundation-grid; 
+
+body {
+    background-color: blue; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+li img {
+    width: 40px;
+    vertical-align: top;
+}
