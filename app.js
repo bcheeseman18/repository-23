@@ -72,7 +72,7 @@ app.factory('FriendService', function ($http) {
                 console.log(response);
             });
 
-            $http.get('https://api.github.com/users/' + name + '/events').then(function (response) {
+            $http.get('https://api.github.com/users/' + name + '/events' + '/events?per_page=100').then(function (response) {
 
                 for (let i = 0; i < response.data.length; i++) {
                     if (response.data[i].created_at) {
